@@ -3,14 +3,34 @@
 
 using namespace std;
 
+void PrintIntro();
+string GetGuessAndPrintBack();
+
+//the entry point of our application.
 int main()
 {
-	constexpr int WORD_LENGTH = 5;
-	cout << "Welcome to Bulls and Cows, a fun word game" << endl;
-	cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?\n";	
+	PrintIntro();
+	GetGuessAndPrintBack();
+	GetGuessAndPrintBack();
+	return 0;
+}
 
+void PrintIntro() 
+{
+	//introduce the game.
+	constexpr int WORD_LENGTH = 9;
+	cout << "Welcome to Bulls and Cows, a fun word game. \n";
+	cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?\n";
+	cout << endl;
+	return;
+}
+
+string GetGuessAndPrintBack() {
+	cout << "Enter your guess: ";
 	string Guess = "";
 	getline(cin, Guess);
-	cout << Guess << endl;
-	return 0;
+
+	//Print Guess back
+	cout << "Your guess was: " << Guess << endl;
+	return Guess;
 }
