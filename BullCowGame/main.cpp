@@ -10,8 +10,11 @@ string GetGuessAndPrintBack();
 int main()
 {
 	PrintIntro();
-	GetGuessAndPrintBack();
-	GetGuessAndPrintBack();
+	constexpr int COUNT = 5;
+	for (int i = 0; i < COUNT; i++)
+	{
+		GetGuessAndPrintBack();
+	}
 	return 0;
 }
 
