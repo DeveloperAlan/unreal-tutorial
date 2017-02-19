@@ -4,18 +4,27 @@
 using namespace std;
 
 void PrintIntro();
-string GetGuessAndPrintBack();
+void PlayGame();
+string GetGuess();
 
 //the entry point of our application.
 int main()
 {
 	PrintIntro();
+	PlayGame();
+
+	return 0;
+}
+
+void PlayGame()
+{
 	constexpr int COUNT = 5;
 	for (int i = 0; i < COUNT; i++)
 	{
-		GetGuessAndPrintBack();
-	}
-	return 0;
+		string PrintVar = GetGuess();
+		cout << "Your guess was: " << PrintVar << endl;
+		cout << endl;
+	}	
 }
 
 void PrintIntro() 
@@ -28,12 +37,9 @@ void PrintIntro()
 	return;
 }
 
-string GetGuessAndPrintBack() {
+string GetGuess() {
 	cout << "Enter your guess: ";
 	string Guess = "";
 	getline(cin, Guess);
-
-	//Print Guess back
-	cout << "Your guess was: " << Guess << endl;
 	return Guess;
 }
