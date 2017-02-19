@@ -11,9 +11,13 @@ bool AskToPlayAgain();
 //the entry point of our application.
 int main()
 {
-	PrintIntro();
-	PlayGame();
-	cout << AskToPlayAgain();
+	bool bWantsToPlayAgain = false;
+	do {
+		PrintIntro();
+		PlayGame();
+		bWantsToPlayAgain = AskToPlayAgain();
+	} while (bWantsToPlayAgain);
+	
 	return 0;
 }
 
